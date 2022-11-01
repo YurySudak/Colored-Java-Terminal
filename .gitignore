@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!pom.xml
+!src/main/java/zender/printer/Print.java
+!src/main/java/zender/printer/Main.java
