@@ -9,7 +9,7 @@ public class Main {
         // use commas
         Print.green("x =", x, "y =", y);
         // you can choose this colors: blue, red, white, purple, yellow, cian, gray, green
-        // or try random color (233 color)
+        // or try random color (233 colors)
         Print.random("this text is colored with random color");
         // you can build colored line with defined colors
         Print.builder().blue("blue").green("green").yellow("yellow").build();
