@@ -4,13 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
         printGeneralCases();
-        Print.random("\n\n\n");
+        Print.random("\n\n");
 
         printLineWithDifferentColors();
-        Print.random("\n\n\n");
+        Print.random("\n\n");
 
         printArrays();
-        Print.random("\n\n\n");
+        Print.random("\n\n");
 
         // print color palette
         Print.showColors();
@@ -41,6 +41,8 @@ public class Main {
 
         // you can use default colors or try random color (233 colors)
         Print.random("this text is colored with random color");
+        Print.random("this text is colored with random color");
+        Print.random("this text is colored with random color");
     }
 
     private static void printLineWithDifferentColors() {
@@ -56,17 +58,28 @@ public class Main {
 
     private static void printArrays() {
         // you can print elements of array
-        String[] arr = {"this", "is", "an", "array", "of", "Strings"};
-        Print.random(arr);
+        String[] arr = {"this", "is", "an", "array", "of", "strings"};
         Print.array(arr).blue();
-        long[] l = {1L, 222222L, 3333333333333333L};
+        // array of strings can be printed as sentence
+        Print.purple(arr);
+        // even with random colors
+        Print.randomAll(arr);
+        Print.randomAll(arr);
+
+        // array of primitives accepted as well
+        long[] l = {111L, 222L, 333L};
+        Print.array(l).cyan();
         // id you need hashcode of array, don't use array()
-        Print.random(l);
+        Print.lilac(l);
         // you can print array with random color as well
+        Print.array(l).random();
+        Print.array(l).random();
         Print.array(l).random();
         // multidimansional array's elements prints as well
         int[][] i = {{1,2},{3,4}};
         Print.array(i).purple();
+        byte[][][] b = {{{1,2,3},{4,5,6}},{{7,8},{9}},{{10}}};
+        Print.array(b).brown();
 
         // peek available colors
         Print.array(new String[]{"this array is white"}).white();
