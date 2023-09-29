@@ -1,4 +1,7 @@
-package sudak.printer;
+package test;
+
+import sudak.printer.Color;
+import sudak.printer.Print;
 
 public class Main {
 
@@ -16,7 +19,7 @@ public class Main {
         System.out.println("x = " + x + " y = " + y);
         // use commas
         Print.green("x =", x, "y =", y);
-        System.out.println();
+        Print.blank();
 
         // find out available colors
         Print.white("white");
@@ -32,35 +35,35 @@ public class Main {
         Print.cyan("cyan");
         Print.lilac("lilac");
         Print.brown("brown");
-        System.out.println();
-
+        Print.blank();
 
         // you can use default colors or try random color (233 colors)
         Print.random("this text is colored with random color");
         Print.random("this text is colored with random color");
         Print.random("this text is colored with random color");
 
-        System.out.println();
-        System.out.println();
+        Print.line(50, "*", Color.BROWN);
+        Print.blank(2);
     }
 
     private static void printLineWithDifferentColors() {
         Print.gold("=== LINES WITH DIFFERENT COLORS ===");
         // you can build colored line with defined colors
         Print.builder().blue("blue").green("green").yellow("yellow").build();
-        System.out.println();
+        Print.blank();
 
         // or with random colors
         Print.randomAll("all", "parts", "with", "random", "color");
         Print.randomAll("all", "parts", "with", "random", "color");
         Print.randomAll("all", "parts", "with", "random", "color");
-        System.out.println();
+        Print.blank();
 
         // peek available colors
         Print.builder().white("white").orange("orange").blue("blue").red("red").pink("pink").green("green").purple("purple")
                 .gray("gray").yellow("yellow").gold("gold").cyan("cyan").lilac("lilac").brown("brown").build();
-        System.out.println();
-        System.out.println();
+
+        Print.line(100, "=", Color.GRAY);
+        Print.blank(2);
     }
 
     private static void printArrays() {
@@ -74,7 +77,7 @@ public class Main {
         Print.randomAll(arr);
         Print.randomAll(arr);
         Print.randomAll(arr);
-        System.out.println();
+        Print.blank();
 
         // array of primitives accepted as well
         long[] l = {111L, 222L, 333L};
@@ -85,12 +88,12 @@ public class Main {
         Print.array(l).random();
         Print.array(l).random();
         Print.array(l).random();
-        // multidimansional array's elements prints as well
+        // multidimensional array's elements prints as well
         int[][] i = {{1,2},{3,4}};
         Print.array(i).purple();
         byte[][][] b = {{{1,2,3},{4,5,6}},{{7,8},{9}},{{10}}};
         Print.array(b).brown();
-        System.out.println();
+        Print.blank();
 
         // available colors
         Print.array(new String[]{"this array is white"}).white();
@@ -106,12 +109,14 @@ public class Main {
         Print.array(new String[]{"this array is cyan"}).cyan();
         Print.array(new String[]{"this array is lilac"}).lilac();
         Print.array(new String[]{"this array is brown"}).brown();
-        System.out.println();
-        System.out.println();
+
+        Print.line(30, "-", Color.BLUE);
+        Print.blank(2);
     }
 
     private static void printColorPalette() {
         Print.gold("=== COLOR PALETTE ===");
         Print.showColors();
+        Print.line();
     }
 }

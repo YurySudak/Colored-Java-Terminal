@@ -8,21 +8,6 @@ import static java.lang.System.out;
  * @author Yury Sudak
  */
 public class Print {
-    static final String RESET = "\033[0m";
-    static final String WHITE = "\033[38;5;15m";
-    static final String ORANGE = "\033[38;5;208m";
-    static final String PINK = "\033[38;5;204m";
-    static final String RED = "\033[38;5;196m";
-    static final String GREEN = "\033[38;5;46m";
-    static final String GOLD = "\033[38;5;214m";
-    static final String BROWN = "\033[38;5;130m";
-    static final String YELLOW = "\033[38;5;226m";
-    static final String BLUE = "\033[38;5;21m";
-    static final String PURPLE = "\033[38;5;129m";
-    static final String LILAC = "\033[38;5;207m";
-    static final String CYAN = "\033[38;5;51m";
-    static final String GRAY = "\033[38;5;246m";
-
 
     public static Printer builder() {
         return new Printer();
@@ -58,62 +43,78 @@ public class Print {
     static String aggregateRandom(Object[] arr) {
         if (arr == null) return "null ";
         if (arr.length == 1) {
-            return getRandomColor() + arr[0].toString() + RESET;
+            return getRandomColor() + arr[0].toString() + Color.RESET.code;
         }
         StringBuilder sb = new StringBuilder();
         for (Object obj : arr) {
-            sb.append(getRandomColor()).append(obj.toString()).append(RESET).append(" ");
+            sb.append(getRandomColor()).append(obj.toString()).append(Color.RESET.code).append(" ");
         }
         return sb.toString();
     }
 
     public static void white(Object... s) {
-        out.println(WHITE + aggregate(s) + RESET);
+        out.println(Color.WHITE.code + aggregate(s) + Color.RESET.code);
     }
     public static void orange(Object... s) {
-        out.println(ORANGE + aggregate(s) + RESET);
+        out.println(Color.ORANGE.code + aggregate(s) + Color.RESET.code);
     }
     public static void red(Object... s) {
-        out.println(RED + aggregate(s) + RESET);
+        out.println(Color.RED.code + aggregate(s) + Color.RESET.code);
     }
     public static void pink(Object... s) {
-        out.println(PINK + aggregate(s) + RESET);
+        out.println(Color.PINK.code + aggregate(s) + Color.RESET.code);
     }
     public static void green(Object... s) {
-        out.println(GREEN + aggregate(s) + RESET);
+        out.println(Color.GREEN.code + aggregate(s) + Color.RESET.code);
     }
     public static void yellow(Object... s) {
-        out.println(YELLOW + aggregate(s) + RESET);
+        out.println(Color.YELLOW.code + aggregate(s) + Color.RESET.code);
     }
     public static void gold(Object... s) {
-        out.println(GOLD + aggregate(s) + RESET);
+        out.println(Color.GOLD.code + aggregate(s) + Color.RESET.code);
     }
     public static void blue(Object... s) {
-        out.println(BLUE + aggregate(s) + RESET);
+        out.println(Color.BLUE.code + aggregate(s) + Color.RESET.code);
     }
     public static void purple(Object... s) {
-        out.println(PURPLE + aggregate(s) + RESET);
+        out.println(Color.PURPLE.code + aggregate(s) + Color.RESET.code);
     }
     public static void lilac(Object... s) {
-        out.println(LILAC + aggregate(s) + RESET);
+        out.println(Color.LILAC.code + aggregate(s) + Color.RESET.code);
     }
     public static void cyan(Object... s) {
-        out.println(CYAN + aggregate(s) + RESET);
+        out.println(Color.CYAN.code + aggregate(s) + Color.RESET.code);
     }
     public static void gray(Object... s) {
-        out.println(GRAY + aggregate(s) + RESET);
+        out.println(Color.GRAY.code + aggregate(s) + Color.RESET.code);
     }
-
     public static void brown(Object... s) {
-        out.println(BROWN + aggregate(s) + RESET);
+        out.println(Color.BROWN.code + aggregate(s) + Color.RESET.code);
     }
 
     public static void random(Object... s) {
-        out.println(getRandomColor() + aggregate(s) + RESET);
+        out.println(getRandomColor() + aggregate(s) + Color.RESET.code);
     }
-
     public static void randomAll(Object... s) {
         out.println(aggregateRandom(s));
+    }
+
+    public static void blank() { out.println();}
+    public static void blank(int n) {
+        for (int i = 0; i < n; i++) {
+            out.println();
+        }}
+
+    public static void line() {
+        line(100, "*", Color.WHITE);
+    }
+
+    public static void line(int length, String element, Color color) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            sb.append(element);
+        }
+        out.println(color.code + sb + Color.RESET.code);
     }
 
     static String getRandomColor() {

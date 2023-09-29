@@ -24,45 +24,45 @@ public class ArrayPrinter {
     }
 
     public void white() {
-        out.println(Print.WHITE + result + Print.RESET);
+        out.println(Color.WHITE.code + result + Color.RESET.code);
     }
     public void blue() {
-        out.println(Print.BLUE + result + Print.RESET);
+        out.println(Color.BLUE.code + result + Color.RESET.code);
     }
     public void pink() {
-        out.println(Print.PINK + result + Print.RESET);
+        out.println(Color.PINK.code + result + Color.RESET.code);
     }
     public void gold() {
-        out.println(Print.GOLD + result + Print.RESET);
+        out.println(Color.GOLD.code + result + Color.RESET.code);
     }
     public void lilac() {
-        out.println(Print.LILAC + result + Print.RESET);
+        out.println(Color.LILAC.code + result + Color.RESET.code);
     }
     public void orange() {
-        out.println(Print.ORANGE + result + Print.RESET);
+        out.println(Color.ORANGE.code + result + Color.RESET.code);
     }
     public void red() {
-        out.println(Print.RED + result + Print.RESET);
+        out.println(Color.RED.code + result + Color.RESET.code);
     }
     public void green() {
-        out.println(Print.GREEN + result + Print.RESET);
+        out.println(Color.GREEN.code + result + Color.RESET.code);
     }
     public void yellow() {
-        out.println(Print.YELLOW + result + Print.RESET);
+        out.println(Color.YELLOW.code + result + Color.RESET.code);
     }
     public void purple() {
-        out.println(Print.PURPLE + result + Print.RESET);
+        out.println(Color.PURPLE.code + result + Color.RESET.code);
     }
     public void cyan() {
-        out.println(Print.CYAN + result + Print.RESET);
+        out.println(Color.CYAN.code + result + Color.RESET.code);
     }
     public void gray() {
-        out.println(Print.GRAY + result + Print.RESET);
+        out.println(Color.GRAY.code + result + Color.RESET.code);
     }
     public void brown() {
-        out.println(Print.BROWN + result + Print.RESET);
+        out.println(Color.BROWN.code + result + Color.RESET.code);
     }
     public void random() {
-        out.println(Print.getRandomColor() + result + Print.RESET);
+        out.println(Print.getRandomColor() + result + Color.RESET.code);
     }
 }
