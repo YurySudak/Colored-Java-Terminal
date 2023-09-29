@@ -1,8 +1,2 @@
-# Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!pom.xml
-!src/main/java/sudak/printer/Print.java
-!src/main/java/sudak/printer/Main.java
+.idea
+target

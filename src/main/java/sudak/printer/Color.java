@@ -1,5 +1,10 @@
 package sudak.printer;
 
+import java.util.Random;
+
+/**
+ * @author Yury Sudak
+ */
 public enum Color {
     RESET("\033[0m"),
     WHITE("\033[38;5;15m"),
@@ -16,9 +21,16 @@ public enum Color {
     CYAN("\033[38;5;51m"),
     GRAY("\033[38;5;246m");
 
+    public final String code;
+
     Color(String code) {
         this.code = code;
     }
 
-    public final String code;
+    public static String getRandomColor() {
+        String color = "\033[38;5;";
+        color += new Random().nextInt(233);
+        color += "m";
+        return color;
+    }
 }

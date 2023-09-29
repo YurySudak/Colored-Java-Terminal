@@ -1,9 +1,9 @@
-package test;
-
-import sudak.printer.Color;
 import sudak.printer.Print;
 
-public class Main {
+/**
+ * @author Yury Sudak
+ */
+public class Demo {
 
     public static void main(String[] args) {
         printGeneralCases();
@@ -35,14 +35,17 @@ public class Main {
         Print.cyan("cyan");
         Print.lilac("lilac");
         Print.brown("brown");
+        // blank line
         Print.blank();
 
         // you can use default colors or try random color (233 colors)
-        Print.random("this text is colored with random color");
-        Print.random("this text is colored with random color");
-        Print.random("this text is colored with random color");
+        Print.random("this text is colored with random color (233 colors)");
+        Print.random("this text is colored with random color (233 colors)");
+        Print.random("this text is colored with random color (233 colors)");
 
-        Print.line(50, "*", Color.BROWN);
+        // draw the line
+        Print.line(70).blue("*");
+        // blank 2 lines
         Print.blank(2);
     }
 
@@ -58,11 +61,11 @@ public class Main {
         Print.randomAll("all", "parts", "with", "random", "color");
         Print.blank();
 
-        // peek available colors
+        // line with all available colors
         Print.builder().white("white").orange("orange").blue("blue").red("red").pink("pink").green("green").purple("purple")
                 .gray("gray").yellow("yellow").gold("gold").cyan("cyan").lilac("lilac").brown("brown").build();
 
-        Print.line(100, "=", Color.GRAY);
+        Print.line(100).green("=");
         Print.blank(2);
     }
 
@@ -70,53 +73,63 @@ public class Main {
         Print.gold("=== ARRAYS ===");
         // you can print elements of array
         String[] arr = {"this", "is", "an", "array", "of", "strings"};
-        Print.array(arr).blue();
-        // array of strings can be printed as sentence
-        Print.purple(arr);
-        // even with random colors
+        Print.blue(arr);
+        Print.green((Object) arr);
+        Print.lilac("array", arr);
+        Print.blank();
+
+        // with random colors
         Print.randomAll(arr);
         Print.randomAll(arr);
         Print.randomAll(arr);
+        Print.blank();
+
+        // with data object
+        User user1 = new User(1, "Yury", "yury@email.com");
+        User user2 = new User(2, "Nata", "nata@email.com");
+        Print.random("user1", user1);
+        Print.random("user1", user1);
+        Print.randomAll("user2", user2);
+        Print.randomAll("user2", user2);
+        Print.random(user1, user2);
+        Print.randomAll(user1, user2);
+        User[] users = new User[]{user1, user2};
+        Print.randomAll(users);
+        Print.randomAll("array of data objects", users);
         Print.blank();
 
         // array of primitives accepted as well
-        long[] l = {111L, 222L, 333L};
-        Print.array(l).cyan();
-        // if you need hashcode of array, don't use array() method
-        Print.lilac(l);
+        long[] longs = {111L, 222L, 333L};
+        Print.cyan(longs);
         // you can print array with random color
-        Print.array(l).random();
-        Print.array(l).random();
-        Print.array(l).random();
-        // multidimensional array's elements prints as well
-        int[][] i = {{1,2},{3,4}};
-        Print.array(i).purple();
-        byte[][][] b = {{{1,2,3},{4,5,6}},{{7,8},{9}},{{10}}};
-        Print.array(b).brown();
+        Print.random(longs);
+        Print.random(longs);
+        Print.random(longs);
         Print.blank();
 
-        // available colors
-        Print.array(new String[]{"this array is white"}).white();
-        Print.array(new String[]{"this array is orange"}).orange();
-        Print.array(new String[]{"this array is blue"}).blue();
-        Print.array(new String[]{"this array is red"}).red();
-        Print.array(new String[]{"this array is pink"}).pink();
-        Print.array(new String[]{"this array is green"}).green();
-        Print.array(new String[]{"this array is purple"}).purple();
-        Print.array(new String[]{"this array is gray"}).gray();
-        Print.array(new String[]{"this array is yellow"}).yellow();
-        Print.array(new String[]{"this array is gold"}).gold();
-        Print.array(new String[]{"this array is cyan"}).cyan();
-        Print.array(new String[]{"this array is lilac"}).lilac();
-        Print.array(new String[]{"this array is brown"}).brown();
+        // multidimensional array's elements prints as well
+        int[][] ints = {{1,2},{3,4}};
+        Print.purple(ints);
+        Print.cyan(ints);
+        Print.blank();
 
-        Print.line(30, "-", Color.BLUE);
+        byte[][][] bytes = {{{1,2,3},{4,5,6}},{{7,8},{9}},{{10}}};
+        Print.brown(bytes);
+        Print.random(bytes);
+        Print.randomAll(bytes);
+        Print.blank();
+
+        Print.lilac("this is multidimensional arrays", ints, bytes);
+        Print.random("this is multidimensional arrays", ints, bytes);
+        Print.randomAll("this is multidimensional arrays", ints, bytes);
+
+        Print.line(100).cyan("-");
         Print.blank(2);
     }
 
     private static void printColorPalette() {
-        Print.gold("=== COLOR PALETTE ===");
+        Print.gold("=== COLOR PALETTE (233 colors) ===");
         Print.showColors();
-        Print.line();
+        Print.line(150).random("~");
     }
 }

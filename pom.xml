@@ -4,9 +4,36 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>sudak.printer</groupId>
-    <artifactId>printer</artifactId>
-    <version>0.5</version>
+    <groupId>com.github.yurysudak</groupId>
+    <artifactId>print</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Print</name>
+    <description>Colored Java Terminal</description>
+    <url>https://github.com/YurySudak/Colored-Java-Terminal</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Yury Sudak</name>
+            <email>yury.sudak@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/YurySudak/Colored-Java-Terminal.git</connection>
+        <developerConnection>scm:git:ssh://github.com:YurySudak/Colored-Java-Terminal.git</developerConnection>
+        <url>https://github.com/YurySudak/Colored-Java-Terminal</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
