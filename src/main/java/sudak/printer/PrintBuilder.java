@@ -7,7 +7,7 @@ import static sudak.printer.Print.aggregate;
  * @author Yury Sudak
  */
 public class PrintBuilder {
-    private StringBuilder result;
+    private final StringBuilder result;
 
     PrintBuilder() {
         result = new StringBuilder();
